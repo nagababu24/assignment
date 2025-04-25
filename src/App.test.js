@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
+
 test('adds a task to the list', () => {
   render(<App />);
   const inputElement = screen.getByPlaceholderText(/add your task here/i);

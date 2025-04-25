@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import CreateTask from './components/CreateTask';
 import './App.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterComponent from './components/FilterComponent';
 
 function App() {
-  const [listData, setListData] = useState([]);
+
+  const [listData, setListData] = useState(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    return storedTasks ? JSON.parse(storedTasks).filter(task => task.completed) : [];    
+  });
+
   const [filter, setFilter] = useState('All');
+
+  useEffect(() => {
+    const completedTasks = listData.filter(task => task.completed);
+    localStorage.setItem('tasks', JSON.stringify(completedTasks));
+  }, [listData]);
+  
+
+  
 
   function handleDataFromCreateTask(value) {
     setListData((prevData) => [...prevData, { text: value, completed: false }]);

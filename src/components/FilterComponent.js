@@ -7,6 +7,7 @@ function FilterComponent({ filter, onFilterChange }) {
   }
 
   return (
+    
     <div className="filter-dropdown">
       <label htmlFor="filter">Filter tasks:</label>
       <select id="filter" value={filter} onChange={handleFilterChange}>

@@ -14,6 +14,8 @@ export default function Create_task({onSendData}) {
       setInput('');
     }
   }
+
+  
   return (
     <div className='col-12'>
         <h1 className="create-task-heading">

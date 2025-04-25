@@ -1,14 +1,14 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import CreateTask from './components/CreateTask';
 
-// Mock function for the onSendData prop
+
 const mockOnSendData = jest.fn();
 
 test('renders input and button elements', () => {
   render(<CreateTask onSendData={mockOnSendData} />);
   
-  const inputElement = screen.getByRole('textbox'); // Get input field by its role
-  const buttonElement = screen.getByRole('button', { name: /add/i }); // Get the button by its name or text
+  const inputElement = screen.getByRole('textbox'); 
+  const buttonElement = screen.getByRole('button', { name: /add/i });
 
   expect(inputElement).toBeInTheDocument();
   expect(buttonElement).toBeInTheDocument();

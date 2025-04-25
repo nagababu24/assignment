@@ -7,6 +7,7 @@ test('renders filter dropdown', () => {
   expect(filterDropdown).toBeInTheDocument();
 });
 
+
 test('changes filter value', () => {
   const mockOnFilterChange = jest.fn();
   render(<FilterComponent filter="All" onFilterChange={mockOnFilterChange} />);
